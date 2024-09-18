@@ -1,45 +1,19 @@
-# Scikit-learn Notes
+# My Data Science Notes
 
-## Introduction
-Scikit-learn is a powerful machine learning library in Python. It provides a wide range of algorithms for classification, regression, clustering, and dimensionality reduction.
+Welcome to my data science notes repository. Here you'll find notes on various topics related to data science, machine learning, and statistics.
 
-## Key Modules
+## Topics
 
-### 1. Preprocessing
-- Used for feature scaling and normalization
-- Example: `StandardScaler`, `MinMaxScaler`
+- [Deep Learning](src/deep-learning/)
+- [Scikit-learn](src/scikit-learn/)
+- [Machine Learning](src/machine-learning/)
+- [Statistics](src/statistics/)
 
-### 2. Model Selection
-- Provides tools for model evaluation and hyperparameter tuning
-- Example: `train_test_split`, `GridSearchCV`
+## Recent Updates
 
-### 3. Metrics
-- Functions to assess model performance
-- Example: `accuracy_score`, `mean_squared_error`
+- [Latest note on Deep Learning](src/deep-learning/latest-note.md)
+- [New Scikit-learn tutorial](src/scikit-learn/new-tutorial.md)
 
-## Basic Usage Example
+## About
 
-```python
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score
-
-# Assume X and y are your features and target
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
-
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.transform(X_test)
-
-model = RandomForestClassifier()
-model.fit(X_train_scaled, y_train)
-
-predictions = model.predict(X_test_scaled)
-accuracy = accuracy_score(y_test, predictions)
-print(f"Model accuracy: {accuracy}")
-```
-
-## Resources
-- [Scikit-learn Official Documentation](https://scikit-learn.org/stable/documentation.html)
-- [Scikit-learn User Guide](https://scikit-learn.org/stable/user_guide.html)
+This site is maintained by [Your Name]. It's a collection of personal notes, tutorials, and resources I've found helpful in my data science journey. Feel free to explore and use these notes for your own learning!
