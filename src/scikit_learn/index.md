@@ -1,5 +1,5 @@
 # Scikit-learn Notes
-
+![logo.jpeg](images/logo.jpeg "Scikit_Learn Logo")
 Welcome to my Scikit-learn notes section. Here you'll find various tutorials, tips, and explanations about using Scikit-learn for machine learning tasks.
 
 ## Contents
