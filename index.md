@@ -4,10 +4,10 @@ Welcome to my data science notes repository. Here you'll find notes on various t
 
 ## Topics
 
-- [Deep Learning](src/deep-learning/)
-- [Scikit-learn](src/scikit-learn/)
-- [Machine Learning](src/machine-learning/)
-- [Statistics](src/statistics/)
+- [Deep Learning](src/deep-learning/index.md)
+- [Scikit-learn](src/scikit-learn/index.md)
+- [Machine Learning](src/machine-learning/index.md)
+- [Statistics](src/statistics/index.md)
 
 ## Recent Updates
 
