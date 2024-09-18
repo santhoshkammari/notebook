@@ -1,5 +1,5 @@
 # Scikit-learn Notes
-![logo.jpeg](images/logo.jpeg "Scikit_Learn Logo")
+![logo.jpeg](/images/logo.jpeg "Scikit_Learn Logo")
 Welcome to my Scikit-learn notes section. Here you'll find various tutorials, tips, and explanations about using Scikit-learn for machine learning tasks.
 
 ## Contents
@@ -8,7 +8,7 @@ Welcome to my Scikit-learn notes section. Here you'll find various tutorials, ti
 2. [Data Preprocessing with Scikit-learn](data-preprocessing.md)
 3. [Model Selection and Evaluation](model-selection.md)
 4. [Regression Algorithms](regression-algorithms.md)
-5. [Classification Algorithms](classification-algorithms.md)
+5. [Classification Algorithms](classification-algorithms.md)a
 
 ## Quick Tips
 
