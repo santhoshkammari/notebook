@@ -2,6 +2,32 @@ import os
 import glob
 from datetime import datetime
 
+from jedi.inference.finder import filter_name
+
+
+def get_foldernames(root_dir):
+    folder_names = [name for name in os.listdir(root_dir) if os.path.isdir(os.path.join(root_dir, name))]
+    return folder_names
+
+def get_non_foldernames(root_dir):
+    folder_names = [name for name in os.listdir(root_dir) if not os.path.isdir(os.path.join(root_dir, name))]
+    return folder_names
+
+
+def get_dirs(root_dir,paths):
+    folder_names = get_foldernames(root_dir)
+    if not folder_names:
+        return []
+    dirs = [os.path.join(root_dir, dir_name) for dir_name in os.listdir(root_dir) if os.path.isdir(os.path.join(root_dir, dir_name)) and not dir_name.startswith('.')]
+    for dir in dirs:
+        get_dirs(dir,paths)
+    paths.extend(dirs)
+
+def get_all_dirs():
+    root_dir = os.path.abspath(__file__).replace("generate_docs.py", "src")
+    paths = []
+    get_dirs(root_dir, paths)
+    return paths
 
 def generate_index(directory):
     """Generate index.md content for a given directory"""
@@ -17,7 +43,7 @@ def generate_index(directory):
     for md_file in md_files:
         filename = os.path.basename(md_file)
         title = filename.replace('.md', '').replace('_', ' ').title()
-        relative_path = os.path.relpath(md_file, directory)
+        relative_path = md_file[md_file.index("src"):]
         content.append(f"- [{title}]({relative_path})\n")
 
     return ''.join(content)
@@ -61,5 +87,21 @@ def main():
         f.write(main_index)
 
 
+def generate_each_markdown(dir):
+    files = get_non_foldernames(dir)
+    filterd_markdown_files =[os.path.join(dir,_) for _ in files if _!="index.md" and _.endswith(".md")]
+    index_md_path = os.path.join(dir,'index.md')
+    if filterd_markdown_files:
+        index_content = generate_index(dir)
+        with open(index_md_path, "w") as f:
+            f.write(index_content)
+
+
+def generate_markdowns(dirs):
+    for dir in dirs:
+        generate_each_markdown(dir)
+
+
 if __name__ == "__main__":
-    main()
+    dirs = get_all_dirs()
+    generate_markdowns(dirs)
