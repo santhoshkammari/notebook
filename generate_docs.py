@@ -111,9 +111,15 @@ def generate_src_index_markdown(root_dir, dirs):
             f.write(f"- [{dir_name}]({dir_name}/index.md)\n")
 
 
+def generate_footer_main_index(root_dir,dirs):
+    print(dirs)
+
+
+
 if __name__ == "__main__":
     root_dir = os.path.abspath(__file__).replace("generate_docs.py", "src")
     dirs = get_all_dirs(root_dir)
-    generate_markdowns(dirs)
-    generate_src_index_markdown(root_dir, dirs)
+    # generate_markdowns(dirs)
+    # generate_src_index_markdown(root_dir, dirs)
+    generate_footer_main_index(root_dir,dirs)
     print("generation is done")

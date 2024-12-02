@@ -1,7 +1,12 @@
-# Index
+# Directory Index
 
-- [machine_learning](machine_learning/index.md)
-- [scikit_learn](scikit_learn/index.md)
-- [resources](resources/index.md)
-- [deep_learning](deep_learning/index.md)
-- [statistics](statistics/index.md)
+Generated from: src
+
+---
+
+- [Deep Learning](deep_learning/deep_learning.md)
+  - [Reinforcement Learning](deep_learning/Reinforcement_Learning/reinforcement_learning.md)
+- [Machine Learning](machine_learning/machine_learning.md)
+- [Resources](resources/resources.md)
+- [Scikit Learn](scikit_learn/scikit_learn.md)
+- [Statistics](statistics/statistics.md)
