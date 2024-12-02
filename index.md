@@ -1,6 +1,4 @@
-# Directory Index
-
-Generated from: src
+# Folder Contents
 
 ---
 
