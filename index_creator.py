@@ -62,8 +62,7 @@ class DirectoryIndexer:
         # Add title only for root level
         if level == 1:
             markdown_lines.extend([
-                "# Directory Index\n",
-                f"Generated from: {self.root_path}\n",
+                "# Folder Contents\n",
                 "---\n"
             ])
 
