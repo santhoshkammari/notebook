@@ -20,15 +20,13 @@ class DirectoryIndexer:
         return ' '.join(word.capitalize() for word in name.split())
 
     def create_markdown_link(self, name: str, path: Path) -> str:
-        """Create a markdown link with the relative path."""
+        """Create a markdown link pointing to index.md in each directory."""
         clean_title = self.clean_name(name)
-        # Create filename from the clean title
-        filename = clean_title.lower().replace(' ', '_') + '.md'
         # Get relative path from root
         rel_path = os.path.relpath(path, self.root_path)
         # Replace backslashes with forward slashes for consistency
         rel_path = rel_path.replace('\\', '/')
-        return f"- [{clean_title}]({rel_path}/{filename})"
+        return f"- [{clean_title}]({rel_path}/index.md)"
 
     def get_directory_structure(self) -> Dict:
         def recurse(current_path: Path, depth: int = 0) -> Dict:
@@ -85,15 +83,44 @@ class DirectoryIndexer:
 
         return '\n'.join(markdown_lines)
 
+    def create_index_files(self):
+        """Create empty index.md files in each directory."""
+
+        def create_indices(path: Path):
+            if self.should_ignore(path):
+                return
+
+            # Create index.md in current directory
+            index_file = path / 'index.md'
+            if not index_file.exists():
+                index_file.touch()
+                print(f"Created: {index_file}")
+
+            # Recursively create index files in subdirectories
+            try:
+                for subpath in path.iterdir():
+                    if subpath.is_dir() and not self.should_ignore(subpath):
+                        create_indices(subpath)
+            except PermissionError:
+                pass
+
+        create_indices(self.root_path)
+
     def create_index(self, output_file: Optional[str] = None) -> str:
+        """Generate main index and create index.md files in all directories."""
+        # First create index.md files in all directories
+        self.create_index_files()
+
+        # Then generate the main index content
         markdown_content = self.generate_markdown()
 
         if output_file:
             output_path = Path(output_file)
             output_path.write_text(markdown_content)
-            print(f"Index saved to: {output_path.absolute()}")
+            print(f"Main index saved to: {output_path.absolute()}")
 
         return markdown_content
+
 
 
 # Example usage
