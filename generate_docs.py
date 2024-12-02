@@ -23,8 +23,7 @@ def get_dirs(root_dir,paths):
         get_dirs(dir,paths)
     paths.extend(dirs)
 
-def get_all_dirs():
-    root_dir = os.path.abspath(__file__).replace("generate_docs.py", "src")
+def get_all_dirs(root_dir):
     paths = []
     get_dirs(root_dir, paths)
     return paths
@@ -102,6 +101,19 @@ def generate_markdowns(dirs):
         generate_each_markdown(dir)
 
 
+def generate_root_index_markdown(root_dir, dirs):
+    index_markdown_path = os.path.join(root_dir, 'index.md')
+
+    with open(index_markdown_path, 'w') as f:
+        f.write("# Index\n\n")
+        for dir in dirs:
+            dir_name = os.path.basename(dir)
+            f.write(f"- [{dir_name}]({dir_name}/README.md)\n")
+
+
 if __name__ == "__main__":
-    dirs = get_all_dirs()
+    root_dir = os.path.abspath(__file__).replace("generate_docs.py", "src")
+    dirs = get_all_dirs(root_dir)
     generate_markdowns(dirs)
+    generate_root_index_markdown(root_dir, dirs)
+    print("generation is done")
