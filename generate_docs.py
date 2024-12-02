@@ -43,7 +43,7 @@ def generate_index(directory):
         filename = os.path.basename(md_file)
         title = filename.replace('.md', '').replace('_', ' ').title()
         relative_path = md_file[md_file.index("src"):]
-        content.append(f"- [{title}]({relative_path})\n")
+        content.append(f"- [{title}]({filename})\n")
 
     return ''.join(content)
 
