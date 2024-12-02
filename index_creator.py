@@ -22,8 +22,8 @@ class DirectoryIndexer:
     def create_markdown_link(self, name: str, path: Path) -> str:
         """Create a markdown link pointing to index.md in each directory."""
         clean_title = self.clean_name(name)
-        # Get relative path from root
-        rel_path = os.path.relpath(path, self.root_path)
+        # Get relative path from root and prepend 'src'
+        rel_path = f"src/{os.path.relpath(path, self.root_path)}"
         # Replace backslashes with forward slashes for consistency
         rel_path = rel_path.replace('\\', '/')
         return f"- [{clean_title}]({rel_path}/index.md)"
@@ -78,14 +78,13 @@ class DirectoryIndexer:
                 child_content = self.generate_markdown(child, level + 1)
                 # Add indentation for children
                 indented_content = '\n'.join('  ' * (level - 1) + line
-                                             for line in child_content.split('\n') if line)
+                                           for line in child_content.split('\n') if line)
                 markdown_lines.append(indented_content)
 
         return '\n'.join(markdown_lines)
 
     def create_index_files(self):
         """Create empty index.md files in each directory."""
-
         def create_indices(path: Path):
             if self.should_ignore(path):
                 return
@@ -122,10 +121,9 @@ class DirectoryIndexer:
         return markdown_content
 
 
-
 # Example usage
 if __name__ == "__main__":
     indexer = DirectoryIndexer("src",
-                               ignore_patterns=[".idea",".git","venv"])
+                             ignore_patterns=[".idea", ".git", "venv"])
     markdown_content = indexer.create_index("index.md")
     print("Index generated successfully!")
