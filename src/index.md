@@ -1,6 +1,7 @@
 # Index
 
 - [Reinforcement_Learning](Reinforcement_Learning/index.md)
+- [common_python_rules](common_python_rules/index.md)
 - [machine_learning](machine_learning/index.md)
 - [scikit_learn](scikit_learn/index.md)
 - [resources](resources/index.md)

@@ -2,4 +2,4 @@
 
 Last updated: 2024-12-14
 
-- [Common Python Rules](common_python_rules.md)
+- [Common Python Rules](common_python_rules/index)
