@@ -9,4 +9,6 @@
 - [Machine Learning](src/machine_learning/index.md)
 - [Resources](src/resources/index.md)
 - [Scikit Learn](src/scikit_learn/index.md)
+- [Smolvlm](src/smolvlm/index.md)
+  - [Core](src/smolvlm/core/index.md)
 - [Statistics](src/statistics/index.md)
