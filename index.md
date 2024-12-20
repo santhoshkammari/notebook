@@ -2,6 +2,8 @@
 
 ---
 
+- [Agents](src/agents/index.md)
+  - [Environment](src/agents/environment/index.md)
 - [Basic Python](src/basic_python/index.md)
   - [Common Python Rules](src/basic_python/common_python_rules/index.md)
 - [Blogs](src/blogs/index.md)
