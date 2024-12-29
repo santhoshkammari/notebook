@@ -1,5 +1,6 @@
 # Index
 
+- [loss_functions](loss_functions/index.md)
 - [Reinforcement_Learning](Reinforcement_Learning/index.md)
 - [common_python_rules](common_python_rules/index.md)
 - [core](core/index.md)
