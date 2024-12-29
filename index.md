@@ -9,6 +9,7 @@
 - [Blogs](src/blogs/index.md)
   - [Notes](src/blogs/notes/index.md)
 - [Deep Learning](src/deep_learning/index.md)
+  - [Neural Networks In Numpy](src/deep_learning/Neural_Networks_In_Numpy/index.md)
   - [Reinforcement Learning](src/deep_learning/Reinforcement_Learning/index.md)
 - [Machine Learning](src/machine_learning/index.md)
   - [Loss Functions](src/machine_learning/loss_functions/index.md)
