@@ -14,6 +14,8 @@
 - [Machine Learning](src/machine_learning/index.md)
   - [Loss Functions](src/machine_learning/loss_functions/index.md)
   - [Scikitlearn Roadmap](src/machine_learning/scikitlearn_roadmap/index.md)
+- [Mathematical Problem Formulation](src/mathematical_problem_formulation/index.md)
+  - [Base](src/mathematical_problem_formulation/base/index.md)
 - [Resources](src/resources/index.md)
 - [Scikit Learn](src/scikit_learn/index.md)
 - [Smolvlm](src/smolvlm/index.md)
