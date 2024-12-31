@@ -1,6 +1,7 @@
 # Index
 
 - [loss_functions](loss_functions/index.md)
+- [scikitlearn_roadmap](scikitlearn_roadmap/index.md)
 - [Neural_Networks_In_Numpy](Neural_Networks_In_Numpy/index.md)
 - [Reinforcement_Learning](Reinforcement_Learning/index.md)
 - [common_python_rules](common_python_rules/index.md)
