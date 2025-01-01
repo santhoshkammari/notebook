@@ -9,6 +9,7 @@
 - [notes](notes/index.md)
 - [base](base/index.md)
 - [environment](environment/index.md)
+- [dsa](dsa/index.md)
 - [machine_learning](machine_learning/index.md)
 - [scikit_learn](scikit_learn/index.md)
 - [resources](resources/index.md)
