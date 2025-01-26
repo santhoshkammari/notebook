@@ -1,5 +1,7 @@
 # Index
 
+- [production](production/index.md)
+- [basic](basic/index.md)
 - [loss_functions](loss_functions/index.md)
 - [scikitlearn_roadmap](scikitlearn_roadmap/index.md)
 - [Neural_Networks_In_Numpy](Neural_Networks_In_Numpy/index.md)
@@ -10,6 +12,7 @@
 - [base](base/index.md)
 - [environment](environment/index.md)
 - [dsa](dsa/index.md)
+- [logging](logging/index.md)
 - [machine_learning](machine_learning/index.md)
 - [scikit_learn](scikit_learn/index.md)
 - [resources](resources/index.md)
